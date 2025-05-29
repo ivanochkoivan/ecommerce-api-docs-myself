@@ -25,4 +25,8 @@ const config: ZudokuConfig = {
   },
 };
 
-export default config;
+export default {
+  outDir: 'dist',
+  root: './pages',
+  base: '/ecommerce-api-docs-myself/',  // Додаємо ось цей параметр
+}
