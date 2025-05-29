@@ -1,0 +1,3 @@
+import{n as i,j as n}from"./entry.client-ukXeCvcP.js";const s="This API uses JWT for authentication.",a=[{depth:1,value:"Authorization",id:"authorization"}],c={title:"Authorization"};function e(t){const o={h1:"h1",p:"p",...i(),...t.components};return n.jsxs(n.Fragment,{children:[n.jsx(o.h1,{id:"authorization",children:"Authorization"}),`
+`,n.jsx(o.p,{children:"This API uses JWT for authentication."})]})}function h(t={}){const{wrapper:o}={...i(),...t.components};return o?n.jsx(o,{...t,children:n.jsx(e,{...t})}):e(t)}export{h as default,s as excerpt,c as frontmatter,a as tableOfContents};
+//# sourceMappingURL=auth-iWJoHwpG.js.map

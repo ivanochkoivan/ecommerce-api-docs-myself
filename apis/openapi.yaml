@@ -1,0 +1,173 @@
+openapi: 3.0.0
+info:
+  title: E-commerce Platform API
+  version: 1.0.0
+  description: API для управління замовленнями та оплатами в інтернет-магазині
+servers:
+  - url: https://api.myecommerce.com/v1
+
+paths:
+  /orders:
+    get:
+      summary: Отримати список замовлень
+      responses:
+        '200':
+          description: Список замовлень
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Order'
+    post:
+      summary: Створити нове замовлення
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '201':
+          description: Замовлення створено
+
+  /orders/{orderId}:
+    get:
+      summary: Отримати замовлення за ID
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Інформація про замовлення
+    put:
+      summary: Оновити замовлення
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Order'
+      responses:
+        '200':
+          description: Замовлення оновлено
+    delete:
+      summary: Видалити замовлення
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Замовлення видалено
+
+  /payments:
+    get:
+      summary: Отримати список оплат
+      responses:
+        '200':
+          description: Список оплат
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Payment'
+    post:
+      summary: Зареєструвати оплату
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '201':
+          description: Оплату зареєстровано
+
+  /payments/{paymentId}:
+    get:
+      summary: Отримати оплату за ID
+      parameters:
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Інформація про оплату
+    put:
+      summary: Оновити оплату
+      parameters:
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Payment'
+      responses:
+        '200':
+          description: Оплату оновлено
+    delete:
+      summary: Скасувати оплату
+      parameters:
+        - name: paymentId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Оплату скасовано
+
+components:
+  schemas:
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+        product:
+          type: string
+        quantity:
+          type: integer
+        price:
+          type: number
+          format: float
+        status:
+          type: string
+          enum: [new, processing, completed, cancelled]
+
+    Payment:
+      type: object
+      properties:
+        id:
+          type: string
+        orderId:
+          type: string
+        amount:
+          type: number
+          format: float
+        method:
+          type: string
+          enum: [card, paypal, bank_transfer]
+        status:
+          type: string
+          enum: [pending, completed, failed]

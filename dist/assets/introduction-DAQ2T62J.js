@@ -1,0 +1,5 @@
+import{n as r,j as t}from"./entry.client-ukXeCvcP.js";const s="Цей проєкт реалізовано студентом Русін, група 8.1224.",h=[{depth:1,value:"About the Project",id:"about-the-project"}],i={title:"About"};function o(n){const e={code:"code",h1:"h1",hr:"hr",p:"p",strong:"strong",...r(),...n.components};return t.jsxs(t.Fragment,{children:[t.jsx(e.h1,{id:"about-the-project",children:"About the Project"}),`
+`,t.jsxs(e.p,{children:["Цей проєкт реалізовано студентом ",t.jsx(e.strong,{children:"Русін"}),", група ",t.jsx(e.strong,{children:"8.1224"}),"."]}),`
+`,t.jsxs(e.p,{children:["Проєкт — ",t.jsx(e.strong,{children:"eCommerce API"})," з підтримкою ",t.jsx(e.code,{inline:"true",children:"Order"})," та ",t.jsx(e.code,{inline:"true",children:"Payment"})," через REST API."]}),`
+`,t.jsx(e.hr,{})]})}function d(n={}){const{wrapper:e}={...r(),...n.components};return e?t.jsx(e,{...n,children:t.jsx(o,{...n})}):o(n)}export{d as default,s as excerpt,i as frontmatter,h as tableOfContents};
+//# sourceMappingURL=introduction-DAQ2T62J.js.map
