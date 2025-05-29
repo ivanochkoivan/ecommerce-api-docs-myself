@@ -1,6 +1,7 @@
 import type { ZudokuConfig } from "zudoku";
 
 const config: ZudokuConfig = {
+  baseUrl: "/ecommerce-api-docs-myself",    // <-- додано baseUrl
   topNavigation: [
     { id: "docs", label: "Documentation" },
     { id: "api", label: "API Reference" },
@@ -25,8 +26,4 @@ const config: ZudokuConfig = {
   },
 };
 
-export default {
-  outDir: 'dist',
-  root: './pages',
-  base: '/ecommerce-api-docs-myself/',  // Додаємо ось цей параметр
-}
+export default config;
